@@ -13,7 +13,7 @@
     Steps for building a springboot application
     1. 添加 maven 依赖
     2. 创建 配置文件 application.properties
-    3. 项目启动类
+    3. 项目启动类 
 
 
 ## RESTful Web Service:
