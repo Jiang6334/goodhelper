@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.okgo.goodhelper.mapper.FeedbackMapper" >
+  <resultMap id="BaseResultMap" type="com.okgo.goodhelper.pojo.Feedback" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="user_id" property="userId" jdbcType="INTEGER" />
+    <id column="fdb_id" property="fdbId" jdbcType="INTEGER" />
+    <result column="article" property="article" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="VARCHAR" />
+  </resultMap>
+</mapper>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.okgo.goodhelper.mapper.GleaningMapper" >
+  <resultMap id="BaseResultMap" type="com.okgo.goodhelper.pojo.Gleaning" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="user_id" property="userId" jdbcType="INTEGER" />
+    <id column="gln_id" property="glnId" jdbcType="INTEGER" />
+    <id column="contact" property="contact" jdbcType="VARCHAR" />
+    <result column="gln_name" property="glnName" jdbcType="VARCHAR" />
+    <result column="image" property="image" jdbcType="VARCHAR" />
+    <result column="description" property="description" jdbcType="VARCHAR" />
+    <result column="gln_time" property="glnTime" jdbcType="VARCHAR" />
+    <result column="address" property="address" jdbcType="VARCHAR" />
+    <result column="is_public" property="isPublic" jdbcType="CHAR" />
+    <result column="create_time" property="createTime" jdbcType="VARCHAR" />
+    <result column="failure_time" property="failureTime" jdbcType="TIMESTAMP" />
+    <result column="type" property="type" jdbcType="CHAR" />
+    <result column="status" property="status" jdbcType="CHAR" />
+  </resultMap>
+</mapper>
