@@ -7,6 +7,6 @@ import java.util.List;
 
 public interface AlumniService {
     int insertAlumni(Alumni alumni);
-    int insertAlumniID(Integer userId, Integer alumniId);
+    int addAlumni(Integer userId, String faculty,String major,String number,String almName);
     List<Alumni> selectAlumniAll();
 }

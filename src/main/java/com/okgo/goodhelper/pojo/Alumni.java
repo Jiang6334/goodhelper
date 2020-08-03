@@ -1,6 +1,9 @@
 package com.okgo.goodhelper.pojo;
 
+import lombok.Data;
+
 import javax.persistence.*;
+
 
 public class Alumni {
     /**
@@ -134,7 +137,7 @@ public class Alumni {
      *
      * @param classes 班级
      */
-    public void setClass(String classes) {
+    public void setClasses(String classes) {
         this.classes = classes;
     }
 

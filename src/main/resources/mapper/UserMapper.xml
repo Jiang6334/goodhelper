@@ -9,4 +9,24 @@
     <select id="queryUserByUserId" resultType="User">
     select * from user where user_id = #{user_id}
   </select>
+
+    <select id="selectUserIdByOpenId" resultType="User">
+        select *
+        from user
+        where openid = #{openId}
+    </select>
+
+    <insert id="addUser" parameterType="com.okgo.goodhelper.pojo.User">
+        insert into user(user_id,wx_name,avatar,gender,country,province,
+                         city,language,openid,is_alumni,create_time,update_time)
+        values(#{user_id},#{wx_name},#{avatar},#{gender},#{country},#{province},
+               #{city},#{language},#{openid},#{is_alumni},#{create_time},#{update_time})
+    </insert>
+    <insert id="addOpenId" parameterType="com.okgo.goodhelper.pojo.User">
+        insert into user(openid)
+        values(#{openid})
+    </insert>
+
+
+
 </mapper>
