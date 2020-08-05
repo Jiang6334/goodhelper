@@ -15,6 +15,9 @@ public interface UserMapper {
     //通过openId返回整个User到前端
     List<User> selectUserIdByOpenId(String openId);
 
+    //查询openId是否存在
+    String isOpenId(String openId);
+
     int addUser(User user);
 
     int addOpenId(String openId);

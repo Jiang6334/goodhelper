@@ -30,7 +30,17 @@ public class UserServiceImpl implements UserService {
         for (User user : userList){
             System.out.println(user);
         }
+        System.out.println("user_id的值："+userList.get(0));
         return userList;
+    }
+
+    @Override
+    public String isOpenId(String openId) {
+        if (userMapper.isOpenId(openId) != null){
+            System.out.println(userMapper.isOpenId(openId));
+            return "1";
+        }
+        return "0";
     }
 
     @Override

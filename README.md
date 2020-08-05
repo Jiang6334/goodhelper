@@ -48,3 +48,23 @@
     * 在idea, File -> New -> Project from version control , 填入git项目的克隆地址
     * 
     * 今后直接在github这个目录下写代码，写完一部分上传一部分是吧？对
+    
+    
+    
+## FrontEnd
+    1、前端传的值到后端为空
+        前端的请求（request）中需要加入Header,来设置编码格式，目前使用的是application/x-www-form-urlencoded
+        application/x-www-form-urlencoded：数据被编码为名称/值对。这是标准的编码格式。
+        multipart/form-data： 数据被编码为一条消息，页上的每个控件对应消息中的一个部分。
+        text/plain： 数据以纯文本形式(text/json/xml/html)进行编码，其中不含任何控件或格式字符。postman软件里标的是RAW。
+        
+## 登录
+    1、通过前端拿取code
+    2、解析code，字符串切割拿取code中的openId
+    3、在后端做逻辑判断
+        1、查看数据库中是否有此openId
+        2、若没有，则插入此openId，生成一条新的数据，返回user对象
+           若存在，拿取此openId的数据返回
+## 微信信息存入
+    在commment/user.js里的getUserInfo里的接口，通过此接口将用户信息传入数据库
+        
