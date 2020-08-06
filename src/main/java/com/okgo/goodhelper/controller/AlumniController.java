@@ -17,7 +17,6 @@ public class AlumniController {
     private AlumniServiceImpl alumniService;
 
     //校友认证测试接口
-    @PostMapping("/insertAlumni")
     public boolean insertAlumni(@RequestBody Alumni alumni){
 
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式

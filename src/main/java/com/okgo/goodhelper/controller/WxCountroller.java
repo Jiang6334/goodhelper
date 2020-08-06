@@ -5,10 +5,7 @@ import com.okgo.goodhelper.pojo.User;
 import com.okgo.goodhelper.service.Impl.UserServiceImpl;
 import com.okgo.goodhelper.utils.HttpUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.util.List;
@@ -55,9 +52,11 @@ public class WxCountroller {
 
 
     @PutMapping("/user/addUserInfo")
-    public boolean addUserInfo(User user){
+    public boolean addUserInfo(@RequestBody User user){
 
         System.out.println("信息返回的user:"+user);
+        userService.addUserInfoByUserId(user);
+
         return true;
 
 

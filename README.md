@@ -65,6 +65,6 @@
         1、查看数据库中是否有此openId
         2、若没有，则插入此openId，生成一条新的数据，返回user对象
            若存在，拿取此openId的数据返回
-## 微信信息存入
+## 微信信息存入  
     在commment/user.js里的getUserInfo里的接口，通过此接口将用户信息传入数据库
         

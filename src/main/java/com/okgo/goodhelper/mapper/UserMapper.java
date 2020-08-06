@@ -2,6 +2,7 @@ package com.okgo.goodhelper.mapper;
 
 import com.okgo.goodhelper.pojo.User;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -14,6 +15,9 @@ public interface UserMapper {
     List<User> queryUserList();
     //通过openId返回整个User到前端
     List<User> selectUserIdByOpenId(String openId);
+
+
+    boolean addUserInfoByUserId(User user);
 
     //查询openId是否存在
     String isOpenId(String openId);

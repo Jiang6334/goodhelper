@@ -35,6 +35,13 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public boolean addUserInfoByUserId(User user) {
+
+        boolean is = userMapper.addUserInfoByUserId(user);
+        return is;
+    }
+
+    @Override
     public String isOpenId(String openId) {
         if (userMapper.isOpenId(openId) != null){
             System.out.println(userMapper.isOpenId(openId));
