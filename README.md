@@ -67,4 +67,5 @@
            若存在，拿取此openId的数据返回
 ## 微信信息存入  
     在commment/user.js里的getUserInfo里的接口，通过此接口将用户信息传入数据库
+    测试git同步
         
