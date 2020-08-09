@@ -59,4 +59,9 @@ public class UserServiceImpl implements UserService {
     public int addOpenId(String openId) {
         return userMapper.addOpenId(openId);
     }
+
+    @Override
+    public void updateUserIsAlumni(int user_id) {
+        userMapper.updateUserIsAlumni(user_id);
+    }
 }

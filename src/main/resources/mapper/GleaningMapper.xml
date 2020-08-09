@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.okgo.goodhelper.mapper.GleaningMapper">
+
+    <resultMap id="selectByTabIdMap" type="com.okgo.goodhelper.pojo.Gleaning" >
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <id column="user_id" property="user_id" jdbcType="INTEGER" />
+        <id column="gln_id" property="gln_id" javaType="INTEGER"/>
+        <result column="gln_name" property="gln_name" jdbcType="VARCHAR" />
+        <result column="image" property="image" jdbcType="VARCHAR" />
+        <result column="description" property="description" jdbcType="VARCHAR" />
+        <result column="gln_time" property="gln_time" jdbcType="VARCHAR" />
+        <result column="address" property="address" jdbcType="VARCHAR" />
+        <result column="is_public" property="is_public" jdbcType="CHAR" />
+        <result column="contact" property="contact" jdbcType="VARCHAR" />
+        <result column="create_time" property="create_time" jdbcType="VARCHAR" />
+        <result column="failure_time" property="failure_time" jdbcType="VARCHAR" />
+        <result column="type" property="type" jdbcType="CHAR" />
+        <result column="status" property="status" jdbcType="CHAR" />
+    </resultMap>
+
+    <select id="selectAmountByUserId" resultType="Integer">
+        select count(*)
+        from gleaning
+        where user_id =#{user_id} and type = #{type} and status = "1"
+    </select>
+
+    <update id="updateGlnStatus" parameterType="com.okgo.goodhelper.pojo.Gleaning">
+        update gleaning
+        <set>
+            status = #{status}
+        </set>
+        where gln_id = #{gln_id}
+    </update>
+
+    <select id="selectGlnList" resultType="Gleaning">
+        select *
+        from gleaning
+        where user_id =#{user_id} and status = "1"
+        <!--
+              and type = #{type}
+            -->
+    </select>
+
+    <insert id="addGleaning" parameterType="com.okgo.goodhelper.pojo.Gleaning">
+        insert into gleaning(user_id,gln_id,gln_name,image,description,gln_time,
+                         address,is_public,contact,create_time,failure_time,type,status)
+        values(#{user_id},#{gln_id},#{gln_name},#{image},#{description},#{gln_time},
+               #{address},#{is_public},#{contact},#{create_time},#{failure_time},#{type},#{gln_time})
+    </insert>
+
+
+    <select id="selectByTabId" resultMap="selectByTabIdMap">
+    select * from gleaning where type = #{tab_id}
+
+
+
+  </select>
+
+    <resultMap id="selctCategoryListMap" type="com.okgo.goodhelper.pojo.Category" >
+        <!--
+          WARNING - @mbg.generated
+
+        -->
+        <id column="cate_id" property="cate_id" jdbcType="INTEGER" />
+
+        <result column="cate_name" property="cate_name" jdbcType="VARCHAR" />
+        <result column="description" property="description" jdbcType="VARCHAR" />
+
+    </resultMap>
+
+    <select id="selectCategoryList" resultMap="selctCategoryListMap">
+    select * from category
+
+  </select>
+
+    <select id="selectGoodsByCateNameLsit" resultType="com.okgo.goodhelper.pojo.Good">
+    select * from good where category = #{cate_name}
+  </select>
+
+    <select id="selectGoodsList" resultType="com.okgo.goodhelper.pojo.Good">
+    select * from good
+  </select>
+
+
+
+</mapper>

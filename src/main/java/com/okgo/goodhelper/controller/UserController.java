@@ -34,10 +34,6 @@ public class UserController {
     @PostMapping("/login")
     public boolean login(User user,String jsCode){
 
-
-
-
-
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
         user.setCreate_time(new Date());
         user.setUpdate_time(new Date());

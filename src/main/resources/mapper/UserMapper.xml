@@ -61,4 +61,12 @@
         where user_id = #{user_id,jdbcType=INTEGER}
     </update>
 
+    <update id="updateUserIsAlumni">
+        update user
+        <set>
+            is_alumni = 1
+        </set>
+        where user_id = #{user_id,jdbcType=INTEGER}
+    </update>
+
 </mapper>

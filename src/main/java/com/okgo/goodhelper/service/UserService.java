@@ -13,4 +13,7 @@ public interface UserService {
     String  isOpenId(String openId);
     int addUser(User user);
     int addOpenId(String openId);
+
+    //校友认证更新是认证为1
+    void updateUserIsAlumni(int user_id);
 }

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.okgo.goodhelper.mapper.GoodMapper">
+    <select id="queryGoodList" resultType="Good">
+    select * from Good
+  </select>
+
+    <select id="selectXinazhiAmountByUserId" resultType="Integer">
+        select count(*)
+        from good
+        where user_id =#{user_id} and status = "1"
+    </select>
+
+    <update id="updateGoodStatus" parameterType="com.okgo.goodhelper.pojo.Good">
+        update good
+        <set>
+            status = #{status}
+        </set>
+        where good_id = #{good_id}
+    </update>
+
+
+    <select id="selectGoodList" resultType="Good">
+        select *
+        from good
+        where user_id =#{user_id} and status = "1"
+    </select>
+
+    <insert id="addGood" parameterType="com.okgo.goodhelper.pojo.Good">
+        insert into good(user_id,good_id,good_name,image,description,sell_price,
+                         bid_price,category,is_new,is_bargain,is_public,is_free,tag,
+                         trade_place,contact,status,create_time,update_time)
+        values(#{user_id},#{good_id},#{good_name},#{image},#{description},#{sell_price},
+               #{bid_price},#{category},#{is_new},#{is_bargain},#{is_public},#{is_free},
+               #{tag},#{trade_place},#{contact},#{status},#{create_time},#{update_time})
+    </insert>
+
+
+
+
+
+</mapper>

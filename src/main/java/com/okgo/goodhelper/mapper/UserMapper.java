@@ -25,4 +25,8 @@ public interface UserMapper {
     int addUser(User user);
 
     int addOpenId(String openId);
+
+
+
+    void updateUserIsAlumni(int user_id);
 }

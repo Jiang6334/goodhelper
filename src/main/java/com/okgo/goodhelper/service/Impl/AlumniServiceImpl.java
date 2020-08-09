@@ -20,15 +20,19 @@ public class AlumniServiceImpl implements AlumniService {
     }
 
     @Override
-    public int addAlumni(Integer userId, String faculty, String major, String number, String almName) {
-        return alumniMapper.addAlumni(userId,faculty,major,number,almName);
+    public int addAlumni(Alumni alumni) {
+        return alumniMapper.addAlumni(alumni);
     }
-
 
 
     @Override
     public List<Alumni> selectAlumniAll() {
         return null;
+    }
+
+    @Override
+    public List<Alumni> getAlumniByAlumniId(Integer user_id) {
+        return alumniMapper.getAlumniByAlumniId(user_id);
     }
 
 
