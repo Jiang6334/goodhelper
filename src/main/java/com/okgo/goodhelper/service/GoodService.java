@@ -13,4 +13,8 @@ public interface GoodService {
     List<Good> selectGoodList(Integer user_id);
 
     boolean addGood(Good good);
+
+    int addGoodImage(String image,Integer good_id);
+
+    int changeGoodImage(String image, Integer good_id);
 }

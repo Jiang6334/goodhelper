@@ -25,6 +25,11 @@ public interface GleaningMapper {
     List<Category> selectCategoryList();
 
     List<Good> selectGoodsList();
+
     List<Good> selectGoodsByCateNameLsit(String cate_name);
+
+    int changeGlnImage(@Param("image")String image,@Param("productId")int productId);
+
+    int insertGlnImage(String image,int productId);
 
 }

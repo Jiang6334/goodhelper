@@ -33,8 +33,17 @@ public class GoodServiceImpl implements GoodService {
 
     @Override
     public boolean addGood(Good good) {
-
-
         return goodMapper.addGood(good);
     }
+    @Override
+    public int changeGoodImage(String image, Integer good_id) {
+        return goodMapper.changeGoodImage(image,good_id);
+    }
+
+    @Override
+    public int addGoodImage(String image, Integer good_id) {
+        return goodMapper.insertGoodImage(image,good_id);
+    }
+
+
 }

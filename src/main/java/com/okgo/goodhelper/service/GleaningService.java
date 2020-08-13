@@ -26,4 +26,8 @@ public interface GleaningService {
     List<Good> selectGoodsList();
 
     List<Good> selectGoodsByCateNameLsit(String cate_name);
+
+    int addGlnImage(String image,Integer good_id);
+
+    int changeGlnImage(String image, Integer good_id);
 }

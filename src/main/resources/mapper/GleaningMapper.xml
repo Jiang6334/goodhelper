@@ -86,6 +86,15 @@
     select * from good
   </select>
 
+    <update id="changeGlnImage">
+    UPDATE gleaning SET image = #{param1} where gln_id = #{param2}
+  </update>
+
+    <update id="insertGlnImage">
+    update gleaning set image = concat(#{param1},'*',image) where gln_id = #{param2}
+  </update>
+
+
 
 
 </mapper>

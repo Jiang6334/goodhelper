@@ -37,6 +37,17 @@
                #{tag},#{trade_place},#{contact},#{status},#{create_time},#{update_time})
     </insert>
 
+    <update id="changeGoodImage">
+    UPDATE good SET image = #{param1} where good_id = #{param2}
+  </update>
+
+    <update id="insertGoodImage">
+    update good set image = concat(#{param1},'*',image) where good_id = #{param2}
+  </update>
+
+
+
+
 
 
 

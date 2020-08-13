@@ -13,6 +13,8 @@ import java.util.List;
 @Service
 public class GleaningServiceImpl implements GleaningService {
 
+
+
     @Autowired
     private GleaningMapper gleaningMapper;
 
@@ -60,4 +62,17 @@ public class GleaningServiceImpl implements GleaningService {
     public List<Good> selectGoodsByCateNameLsit(String cate_name) {
         return gleaningMapper.selectGoodsByCateNameLsit(cate_name);
     }
+
+
+    @Override
+    public int changeGlnImage(String image, Integer gln_id) {
+        return gleaningMapper.changeGlnImage(image,gln_id);
+    }
+
+    @Override
+    public int addGlnImage(String image, Integer gln_id) {
+        return gleaningMapper.insertGlnImage(image,gln_id);
+    }
+
+
 }

@@ -1,14 +1,19 @@
 package com.okgo.goodhelper.controller;
 
 
+import com.okgo.goodhelper.enums.RTEnum;
 import com.okgo.goodhelper.mapper.GoodMapper;
 import com.okgo.goodhelper.pojo.Good;
 import com.okgo.goodhelper.pojo.User;
 import com.okgo.goodhelper.pojo.nopojo.Count;
+import com.okgo.goodhelper.pojo.nopojo.RTVO;
 import com.okgo.goodhelper.service.Impl.GleaningServiceImpl;
 import com.okgo.goodhelper.service.Impl.GoodServiceImpl;
+import com.okgo.goodhelper.utils.RTVOUtil;
+import com.sun.imageio.plugins.common.ImageUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -89,6 +94,23 @@ public class GoodController {
 
         return goodService.addGood(good);
     }
+
+
+//    /**
+//     * 添加商品图片
+//     * @param file
+//     * @return
+//     */
+//    @PostMapping("/addimage")
+//    public RTVO addImage(@RequestParam("file") MultipartFile file,
+//                         @RequestParam("productId") int productId){
+//        if(file == null)
+//            return RTVOUtil.error(RTEnum.ERROR_PARAM.getCode(),RTEnum.ERROR_PARAM.getMsg());
+//        String url = ImageUtil.uploadWx(file);
+//        if (goodService.addGoodImage(url,productId) == 0)
+//            return RTVOUtil.error(RTEnum.FAIL_OPERATION.getCode(),RTEnum.FAIL_OPERATION.getMsg());
+//        return RTVOUtil.success();
+//    }
 
 
 }
